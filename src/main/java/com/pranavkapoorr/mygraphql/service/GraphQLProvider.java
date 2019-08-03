@@ -1,35 +1,28 @@
-package com.pranavkapoorr.mygraphql.resolvers;
+package com.pranavkapoorr.mygraphql.service;
 
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
-import graphql.schema.idl.RuntimeWiring;
-import graphql.schema.idl.SchemaGenerator;
-import graphql.schema.idl.SchemaParser;
+import graphql.schema.idl.*;
 import graphql.schema.idl.TypeDefinitionRegistry;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
-import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.IOException;
+import org.springframework.stereotype.Service;
 
+import com.pranavkapoorr.mygraphql.service.fetchers.*;
+import javax.annotation.PostConstruct;
+import java.io.*;
 import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
 
-@Component
+@Service
 public class GraphQLProvider {
 
-
     @Autowired
-    private AllContactsFetcher allContactsFetcher;
-    
+    private AllContactsFetcher allContactsFetcher;    
     @Autowired
     private ContactByIdFetcher contactByIdFetcher;
-    
     @Value("classpath:contacts.graphql")
     Resource resource;
-    
     private GraphQL graphQL;
 
     @PostConstruct

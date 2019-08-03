@@ -1,12 +1,11 @@
-package com.pranavkapoorr.mygraphql;
-
+package com.pranavkapoorr.mygraphql.repository;
 
 import com.pranavkapoorr.mygraphql.models.Contact;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Component
+@Repository
 public class ContactRepository {
 
     private Map<String, Contact> contacts;

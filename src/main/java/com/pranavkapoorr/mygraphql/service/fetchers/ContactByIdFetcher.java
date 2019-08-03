@@ -1,9 +1,8 @@
-package com.pranavkapoorr.mygraphql.resolvers;
+package com.pranavkapoorr.mygraphql.service.fetchers;
 
-import com.pranavkapoorr.mygraphql.ContactRepository;
 import com.pranavkapoorr.mygraphql.models.Contact;
+import com.pranavkapoorr.mygraphql.repository.ContactRepository;
 import graphql.schema.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
